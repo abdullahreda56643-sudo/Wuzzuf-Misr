@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Route admin subpaths to the admin entry point
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]
+
+# Prevent directory listing
+Options -Indexes

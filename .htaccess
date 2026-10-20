@@ -1,0 +1,22 @@
+RewriteEngine On
+
+# Keep the real admin area and public folder out of the front-end rewrite
+RewriteCond %{REQUEST_URI} !^/admin(?:/|$) [NC]
+RewriteCond %{REQUEST_URI} !^/works/project-root/admin(?:/|$) [NC]
+RewriteCond %{REQUEST_URI} !^/works/project-root/public(?:/|$) [NC]
+RewriteCond %{REQUEST_URI} !^/public(?:/|$) [NC]
+RewriteRule ^.*$ public/$0 [L]
+
+# Prevent directory listing
+Options -Indexes
+
+# Block sensitive files from direct access
+<FilesMatch "^(composer\.json|install\.sql|README\.md|\.env|\.htaccess)$">
+    Require all denied
+</FilesMatch>
+
+# Hide dotfiles
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+

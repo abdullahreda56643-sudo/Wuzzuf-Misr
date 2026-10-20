@@ -1,0 +1,14 @@
+.env
+.env.*
+!.env.example
+/vendor/
+/storage/cache/*
+!/storage/cache/.gitkeep
+/storage/logs/*
+!/storage/logs/.gitkeep
+/storage/sessions/*
+!/storage/sessions/.gitkeep
+/public/assets/uploads/companies/*
+!/public/assets/uploads/companies/.gitkeep
+/public/assets/uploads/resumes/*
+!/public/assets/uploads/resumes/.gitkeep
